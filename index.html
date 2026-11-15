@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>We Love Chips | Fresh & Delicious</title>
+
+<meta name="description"
+content="We Love Chips - Delicious, affordable chips served fresh in our signature brown bags. Order through WhatsApp.">
+
+<style>
+:root {
+    --brown: #633b23;
+    --dark-brown: #382316;
+    --gold: #e9a928;
+    --cream: #fff8eb;
+    --paper: #c99a63;
+    --white: #ffffff;
+    --green: #168c4b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--cream);
+    color: var(--dark-brown);
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+header {
+    background: var(--dark-brown);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    padding: 75px 8%;
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    background: linear-gradient(
+        120deg,
+        #e8b85c,
+        #f7d99e
+    );
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: white;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 470px;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border: 15px solid #b98753;
+    border-radius: 12px;
+    box-shadow: 12px 12px 0 var(--dark-brown);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--dark-brown);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--brown);
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 80px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--dark-brown);
+}
+
+.section-heading p {
+    color: #786453;
+}
+
+/* PRODUCTS */
+
+.menu {
+    background: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.menu-card {
+    background: var(--cream);
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #eadbc6;
+    transition: 0.3s;
+    padding-bottom: 30px;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px #00000018;
+}
+
+.bag-image {
+    background: #d4ae7d;
+    padding: 20px;
+    position: relative;
+}
+
+.bag-image img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    display: block;
+    border: 9px solid #b98753;
+    border-radius: 4px 4px 14px 14px;
+}
+
+.bag-label {
+    position: absolute;
+    bottom: 33px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f5dfb9;
+    color: var(--dark-brown);
+    padding: 7px 14px;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    border: 1px solid #b98753;
+}
+
+.menu-card h3 {
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.menu-card p {
+    color: #786453;
+    margin: 8px 15px;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--brown);
+    margin: 12px 0 18px;
+}
+
+.order-link {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark-brown);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 900;
+    transition: 0.3s;
+}
+
+.order-link:hover {
+    background: #d99412;
+}
+
+/* WHY US */
+
+.features {
+    background: #f1dfc3;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature {
+    padding: 25px;
+}
+
+.feature span {
+    font-size: 42px;
+}
+
+.feature h3 {
+    margin: 12px 0;
+}
+
+/* ABOUT */
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image,
+.about-content {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    border: 12px solid #c99a63;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #786453;
+    margin-bottom: 15px;
+}
+
+/* ORDER */
+
+.order-section {
+    background: #e9bd73;
+}
+
+.order-box {
+    max-width: 650px;
+    background: white;
+    padding: 40px;
+    margin: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px #00000015;
+}
+
+.order-box h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.order-box > p {
+    color: #786453;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddcfbd;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--gold);
+}
+
+.total {
+    background: var(--cream);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.whatsapp-btn {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    padding: 17px;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #116c39;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--dark-brown);
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    margin-bottom: 25px;
+    color: #e6d5c5;
+}
+
+/* FOOTER */
+
+footer {
+    background: #24170f;
+    color: #c8b9a9;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
+    }
+
+    .hero p {
+        margin: 0 auto 25px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .menu-grid,
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+}
+
+@media(max-width: 450px) {
+    .logo {
+        font-size: 21px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .order-box {
+        padding: 25px 18px;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="logo">WE LOVE CHIPS.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Our Chips</a>
+        <a href="#about">About</a>
+        <a href="#order">Order</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            FRESH CHIPS.<br>
+            <span>GOOD VIBES.</span>
+        </h1>
+
+        <p>
+            Crispy, golden and delicious!
+            Enjoy your favourite chips served
+            in our signature brown bags.
+        </p>
+
+        <a href="#menu" class="btn">
+            EXPLORE OUR MENU →
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        <img
+        src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=1000&q=85"
+        alt="Fresh golden potato chips">
+    </div>
+
+</section>
+
+<!-- MENU -->
+
+<section class="menu" id="menu">
+
+    <div class="section-heading">
+        <h2>OUR CHIPS MENU</h2>
+        <p>Good portions. Great prices. Big flavour!</p>
+    </div>
+
+    <div class="menu-grid">
+
+        <!-- SMALL -->
+
+        <div class="menu-card">
+
+            <div class="bag-image">
+                <img
+                src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=700&q=85"
+                alt="Small portion of golden chips">
+
+                <div class="bag-label">
+                    WE LOVE CHIPS
+                </div>
+            </div>
+
+            <h3>Small Bag</h3>
+
+            <p>Perfect for a quick snack.</p>
+
+            <div class="price">R20</div>
+
+            <a href="#order" class="order-link"
+            onclick="selectSize('small')">
+                ORDER SMALL
+            </a>
+
+        </div>
+
+        <!-- MEDIUM -->
+
+        <div class="menu-card">
+
+            <div class="bag-image">
+                <img
+                src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=700&q=85"
+                alt="Medium portion of crispy chips">
+
+                <div class="bag-label">
+                    WE LOVE CHIPS
+                </div>
+            </div>
+
+            <h3>Medium Bag</h3>
+
+            <p>More chips. More happiness.</p>
+
+            <div class="price">R44</div>
+
+            <a href="#order" class="order-link"
+            onclick="selectSize('medium')">
+                ORDER MEDIUM
+            </a>
+
+        </div>
+
+        <!-- LARGE -->
+
+        <div class="menu-card">
+
+            <div class="bag-image">
+                <img
+                src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=85"
+                alt="Large serving of golden chips">
+
+                <div class="bag-label">
+                    WE LOVE CHIPS
+                </div>
+            </div>
+
+            <h3>Large Bag</h3>
+
+            <p>For the serious chip lovers!</p>
+
+            <div class="price">R55</div>
+
+            <a href="#order" class="order-link"
+            onclick="selectSize('large')">
+                ORDER LARGE
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="section-heading">
+        <h2>WHY WE LOVE CHIPS</h2>
+        <p>It's more than just a snack!</p>
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature">
+            <span>🍟</span>
+            <h3>Fresh & Delicious</h3>
+            <p>Enjoy tasty, golden chips.</p>
+        </div>
+
+        <div class="feature">
+            <span>💰</span>
+            <h3>Affordable Prices</h3>
+            <p>Great snacks without spending too much.</p>
+        </div>
+
+        <div class="feature">
+            <span>🤎</span>
+            <h3>Our Signature Bags</h3>
+            <p>Simple, stylish brown takeaway packaging.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-image">
+        <img
+        src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=900&q=85"
+        alt="Delicious freshly prepared potato chips">
+    </div>
+
+    <div class="about-content">
+
+        <h2>WE LOVE CHIPS. IT'S THAT SIMPLE.</h2>
+
+        <p>
+            At We Love Chips, we believe that
+            good food should be delicious,
+            affordable and enjoyable.
+        </p>
+
+        <p>
+            Whether you are grabbing a quick
+            snack or sharing with friends,
+            we have the perfect portion for you.
+        </p>
+
+        <p>
+            Fresh flavours, affordable prices
+            and great vibes!
+        </p>
+
+        <a href="#order" class="btn">
+            GET YOUR CHIPS
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ORDER -->
+
+<section class="order-section" id="order">
+
+    <div class="order-box">
+
+        <h2>PLACE YOUR ORDER 🍟</h2>
+
+        <p>
+            Choose your portions and send
+            your order directly to WhatsApp.
+        </p>
+
+        <form id="orderForm">
+
+            <div class="form-group">
+                <label for="customer">Your Name</label>
+
+                <input
+                type="text"
+                id="customer"
+                placeholder="Enter your name"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="small">Small Chips - R20</label>
+
+                <input
+                type="number"
+                id="small"
+                min="0"
+                value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="medium">Medium Chips - R44</label>
+
+                <input
+                type="number"
+                id="medium"
+                min="0"
+                value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="large">Large Chips - R55</label>
+
+                <input
+                type="number"
+                id="large"
+                min="0"
+                value="0">
+            </div>
+
+            <div class="form-group">
+
+                <label for="collection">
+                    Collection or Delivery
+                </label>
+
+                <select id="collection" required>
+                    <option value="">Choose an option</option>
+                    <option value="Collection">Collection</option>
+                    <option value="Delivery">
+                        Delivery (confirm availability and fee)
+                    </option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="notes">
+                    Additional Instructions
+                </label>
+
+                <textarea
+                id="notes"
+                rows="3"
+                placeholder="Any special instructions?">
+                </textarea>
+
+            </div>
+
+            <div class="total">
+                <span>Total:</span>
+                <span id="total">R0</span>
+            </div>
+
+            <button type="submit" class="whatsapp-btn">
+                ORDER VIA WHATSAPP
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+    <h2>READY FOR SOME CHIPS?</h2>
+
+    <p>
+        Your next favourite snack is
+        just one WhatsApp message away!
+    </p>
+
+    <a
+    href="https://wa.me/27711012818"
+    class="btn"
+    target="_blank"
+    rel="noopener noreferrer">
+
+        CHAT WITH US
+
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <span>WE LOVE CHIPS</span>.
+        All Rights Reserved.
+    </p>
+
+    <p>Made with love for chip lovers. 🍟</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const prices = {
+    small: 20,
+    medium: 44,
+    large: 55
+};
+
+const whatsappNumber = "27711012818";
+
+function calculateTotal() {
+
+    const quantities = {};
+
+    ["small", "medium", "large"].forEach(size => {
+
+        const input = document.getElementById(size);
+
+        const quantity = Math.max(
+            0,
+            Math.floor(Number(input.value) || 0)
+        );
+
+        input.value = quantity;
+
+        quantities[size] = quantity;
+
+    });
+
+    const total =
+        quantities.small * prices.small +
+        quantities.medium * prices.medium +
+        quantities.large * prices.large;
+
+    document.getElementById("total").textContent =
+        "R" + total;
+
+    return {
+        ...quantities,
+        total
+    };
+
+}
+
+// Update total whenever quantities change.
+
+["small", "medium", "large"].forEach(size => {
+
+    document.getElementById(size).addEventListener(
+        "input",
+        calculateTotal
+    );
+
+});
+
+// Select a product from the menu.
+
+function selectSize(size) {
+
+    const input = document.getElementById(size);
+
+    input.value = Number(input.value) + 1;
+
+    calculateTotal();
+
+}
+
+// Submit WhatsApp order.
+
+document.getElementById("orderForm").addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("customer").value.trim();
+
+        const collection =
+            document.getElementById("collection").value;
+
+        const notes =
+            document.getElementById("notes").value.trim();
+
+        const order = calculateTotal();
+
+        if (!name || !collection) {
+            alert("Please complete your details.");
+            return;
+        }
+
+        if (order.total === 0) {
+            alert("Please select at least one order.");
+            return;
+        }
+
+        const message = `
+HELLO WE LOVE CHIPS!
+
+NEW ORDER
+
+Customer: ${name}
+
+ORDER DETAILS:
+
+Small Chips: ${order.small} x R20
+Medium Chips: ${order.medium} x R44
+Large Chips: ${order.large} x R55
+
+TOTAL: R${order.total}
+
+Preference: ${collection}
+
+Instructions: ${notes || "None"}
+
+Please confirm my order. Thank you!
+        `;
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+
+    }
+);
+
+</script>
+
+</body>
+</html>
